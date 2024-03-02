@@ -1,0 +1,58 @@
+Eksamen 2018
+Oppgave 4a)
+
+int kontroll(list_t *spor, list_t *fasit){
+    list_iterator_t *spor_iter = list_createiterator(spor);
+    list_iterator_t *fasit_iter = list_createiterator(fasit);
+    // Sjekker at iteratorene fungerer
+    if(spor_iter == NULL)
+    return 2;
+    if(fasit_iter == NULL)
+    return 3;
+
+    kontrollelement_t *kontS = spor_iter->next;
+    kontrollelement_t *kontF = fasit_iter->next;
+
+    int sjekk = 1;
+
+    while((kontS = list_next(spor_iter))&&(kontF = list_next(fasit_iter))){
+        if(kontS->kode != kontF->kode){
+            sjekk = 0;
+        }
+    }
+
+    if(spor_iter == NULL && fasit_iter != NULL){
+        sjekk = 0;
+    }
+
+    if(sjekk == 0)
+    return 0;
+
+    if(sjekk == 1)
+    return 1;
+}
+
+
+Oppgave 4b)
+
+double tid(list_t *spor){
+    // Lager en iterator til å gå gjennom listene
+    list_iterator_t *iter = list_createiterator(spor);
+    // Sjekker at iteratoren fungerer, feilkode 2
+    if(iter == NULL)
+    return -1;
+
+    double tidbrukt = 0;
+
+    kontrollelement_t *KS = list_next(iter);
+
+    while((iter = list_next(spor))){
+        tidbrukt += KS->strekktid;
+    }
+
+    // Sjekker at ingenting har gått galt
+    if(tidbrukt == 0)
+    return -1;
+
+    return tidbrukt;
+}

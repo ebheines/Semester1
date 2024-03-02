@@ -1,0 +1,145 @@
+EKSAMEN 2018 HØST
+
+typedef struct kontrollelement kontrollelement_t;
+struct kontrollelement {
+    int kode;
+    double strekktid;
+};
+
+void list_iterator_t *list_createiterator(list_t *list);
+void *list_next(list_iterator_t *iterator);
+void list_destroyiterator(list_iterator_t *iterator);
+
+Oppgave 4a)
+
+int kontroll(list_t *spor, list_t *fasit){
+    list_iterator_t *spor_iter = list_createiterator(spor);
+    list_iterator_t *fasit_iter = list_createiterator(fasit);
+
+    //Sjekker at iteratorene fungerer
+    if(spor_iter == NULL)
+        return 2;
+    if(fasit_iter == NULL)
+        return 3;
+
+    int sjekk = 1;
+
+    // Looper gjennom begge listene 
+    while(spor_iter != NULL && fasit_iter != NULL){
+    // Sjekker at koden i posten er lik, setter sjekk
+    // til 0 hvis dette ikke er tilfellet
+    if(spor_iter->kode != fasit_iter->kode)
+        sjekk = 0;
+    list_next(spor_iter);
+    list_next(fasit_iter);
+    }
+
+    // Sjekker at alle postene er besøkt
+    if(spor_iter == NULL && fasit_iter != NULL)
+        sjekk = 0;
+    
+    if(sjekk == 1)
+        return 1;
+    if(sjekk == 0)
+        return 0;
+}
+
+
+Oppgave 4b)
+
+double tid(list_t *spor){
+    list_iterator_t *iter = list_createiterator(spor);
+    // Sjekker at iteratoren fungerer
+    if(iter == NULL)
+        return 2;
+    
+    double tidbrukt = 0;
+
+    while((iter = list_next(iter))){
+        tidbrukt += iter->strekktid;
+    }
+    // Sjekker at tiden faktisk er lagt til tidbrukt
+    // Returnerer -1 hvis noe da er gått galt
+    if(tidbrukt == 0)
+        return -1;
+    return tidbrukt;
+};
+
+
+Oppgave 4c)
+
+double bestetid(list_t *godkjente){
+    list_iterator_t *iter = list_createiterator(godkjente);
+    // Sjekker at iterator fungerer, feilkode 2
+    if(iter == NULL)
+        return 2;
+
+    double besttid = INT_MAX;
+
+    while((iter = list_next(iter))){
+        if(tid(iter) < besttid)
+        besttid = tid(iter);
+    }
+
+    // Sjekker at besttid har endret seg, feilkode -1
+    if(besttid == INT_MAX)
+        return -1;
+
+    return besttid;
+};
+
+OPPGAVE 3
+Oppgave 3a)
+
+int forekommer(int *A, int n, int k){
+    int antall = 0;
+    for(int i = 0; i < n; i++){
+        if(A[i] == k)
+        antall++;
+    }
+
+    return antall;
+}
+
+
+Oppgave 3b)
+
+void sorter(int *A, int n){
+    int tmp = 0;
+  
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(A[i] < A[j]){
+                tmp = A[i];
+                A[i] = A[j];
+                A[j] = tmp;
+            }
+        }
+    }
+}
+
+
+Oppgave 3c)
+
+int majoritetselement(int *A, int n){
+    int maxTelle = 0;
+    int index = -1;
+
+    for(int i = 0; i < n; i++){
+        int telle = 0;
+        for(int j = 0; j < n; j++){
+            if(A[i] == A[j]){
+                telle++;
+            }
+        }
+        }
+    if(telle > maxTelle){
+            maxTelle = telle;
+            index = i;
+    }
+    if(maxTelle > n/2)
+        return 1;
+    else{
+        return 0;
+    }
+}

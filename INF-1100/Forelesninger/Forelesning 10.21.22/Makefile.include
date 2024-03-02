@@ -1,0 +1,12 @@
+# Platform detection
+PLATFORM = $(shell uname -a)
+ifeq ($(findstring Microsoft), $(Platform))Microsoft)
+    $(info === Linux Subsystem for Windows)
+    CC = x86_64-264-mingw32-gcc
+    PREBUILD = cp SDL2-64.dll SDL2.dll 
+    EXECUTABLE := $(EXECUTABLE).EXECUTABLE
+
+    
+endif
+endif
+endif

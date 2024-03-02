@@ -1,0 +1,224 @@
+von Neumann Modellen:
+
+Første utdrag:
+Von Neumann modellen består av 5 komponenter: 
+    Input: Hvor vi får informasjon inn til CPU gjennom for eksempel et tastatur, en card reader, disk osv. 
+    Memory: Hvor data og instruksjoner lagres for videre bruk. Data lagres i MDR(Memory Data Register) og addresser lagres i MAR(Memory Address Register)
+    Processing Unit: Får instruksjoner fra Control Unit og prosesserer informasjonen. Inneholder en ALU(Arithmetic/Logical Unit) som tar seg av 
+    operasjoner som krever matematisk(+, -, /, *) eller logisk(AND, OR, XOR) utregning. 
+    Control Unit: Holder styr på hele instruksjonssyklusen. Passer på at alle komponentene gjør riktig instruks til riktig tid. Inneholder en PC(Instruction pointer)
+    som peker til neste instruksjon i minnet, og en IR(Instruction Register) som holder på den nåværende instruksjonen.  
+    Output: Hvor informasjon eller data sendes ut fra CPU, til for eksempel en skjerm, disk, LED osv. 
+
+I von Neumann modellen har vi en instruksjonssyklus som forteller hva som skjer i CPU-en og rekkefølgen på en operasjon. Den sir slik ut:
+    1. Fetch: Henter neste instruksjon fra minnet og laster de til instruksjonsregisteret 
+    2. Decode: Finner ut hva som skal gjøre og hvilken komponent som må tas i bruk 
+    3. Evaluate Address: Evaluerer hvor i minnet vi må, om nødvendig 
+    4. Fetch Operands: Finner ut hvilke operasjoner som må gjøres 
+    5. Execute: Utfører operasjonen som er gitt fra instruksene 
+    6. Store Result: Lagrer resultatet av operasjonen i den gitte destinasjonen 
+
+Når instruksjonssyklusen er gjennomført kan vi si at det 7. trinnet er å starte om igjen. 
+
+
+Andre utdrag:
+
+Von Neumann modellen er en modell von Neumann kom fram til i 1945 som utreder hvordan en CPU(Central Processing Unit) oppererer. 
+Modellen består av 5 forskjellige komponenter:
+    Input:              Får informasjon inn i CPU gjennom enten et tastatur, en disk, en car reader osv. 
+
+    Memory:             Hvor data og instrukser blir lagret. Inneholder to register, MAR(Memory Address Register) som holder på addresser, og
+                        MDR(Memory Data Register) som holder på data.
+    
+    Processing Unit:    Hvor instruksene blir utført. PU inneholder en ALU(Arithmetic/Logical Unit), Arithmetic står for matematiske problemer(+, -, /, *), 
+                        og Logical står for de logiske problemene(OR, AND, XOR).
+
+    Control Unit:       Passer på at alle komponentene gjør riktig instruks til riktig tid. Inneholder en PC(Processing Counter/Instruction Pointer) som holder
+                        på den nåværerende instruksen vi jobber med. Og en IR(Instruction Register) som er et register over instrukser. 
+    
+    Output:             Hvor data og informasjon kommer ut av CPU, gjennom enten en skjerm, LED, disk osv.
+
+Disse komponentene jobber i lag for å drive prosessen til CPU-en, dette kaller vi instruksjonssyklusen. Det ser slik ut:
+    1. Fetch: Henter neste instruks fra minnet og laster det opp til instruksjonsregisteret
+    2. Decode: Finner ut hva instruksen er og hvor den skal utføres
+    3. Evaluate Address: Evaluerer hvor i minnet vi kan hente den nødvendige informasjonen
+    4. Fetch Operands: Finner ut hvilke operasjoner som må gjøres
+    5. Execute: Utfører instruksen som er gitt
+    6. Store result: Lagrer resultatet til en gitt destinasjonen
+Et 7. steg er å starte prosessen om igjen. Dette er noe som skjer veldig kjapt og følger en klokke som gjør hvert av stegene i instruksjonssyklusen 
+for hvert tikk den tar. 
+
+
+
+
+
+
+
+Tredje utdrag:
+
+Von Neumann modellen er en modell av datamaskin arkitektur som ble laget av John von Neumann i 1945 og brukes fortsatt i mange datamaskiner
+den dag idag. Den består av 5 komponenter som jobber i lag, noe vi framstiller i instruksjonssyklusen. Starter med komponentene:
+
+Input:              Hvor vi data inn til datamaskinen, dette gjennom f.eks. et tastatur, en kort-leser, en disk osv. 
+Memory:             Her lagres data fra programmet og instrukser. Komponenten inneholder et adresseregister (MAR) og et dataregister (MDR) som er
+                    aktivt med i prosessen.
+Processing Unit:    Her selve prosessen utføres. Inneholder et midlertidig register (TMP) og en Arithmetic/Logical Unit som tar seg av logiske og 
+                    matematiske instrukser, likt addering, subtrahering, multiplikasjon, AND, OR, XOR osv. 
+Control Unit:       Passer på at alt i prosessen gjøres på riktig sted til riktig tid. Inneholder en instruksjonspeker(PC) som peker til neste 
+                    instruks som skal utføres, og et instruksregister(IR) som holder på den nåværende instruksen.
+Output:             Hvor data sendes ut av datamaskinen, til f.eks. en skjerm, en LED, en printer osv. 
+
+Instruksjonssyklusen ser slik ut:
+1. Fetch: Henter instruksen fra minnet og laster den opp til instruksregisteret(IR) i controlluniten
+2. Decode: Finner ut hva som skal gjøre og hvor det skal utføres
+3. Evaluate Address: Finne adressen i minnet til instruks operanden
+4. Fetch Operands: Legger adressen som ble funnet i forrige steg inn i MAR og leser dataen inn til 
+                   MDR så den er tilgjengelig for Processing Unit-en.
+5. Execute: Utfører instruksen der den skal utføres
+6. Store Result: Lagrer resultaten til den gitte destinasjonen i minnet gitt fra instruks operanden,
+                 og starter hele prosessen om igjen. 
+
+
+Fjerde utdrag:
+
+von Neumann modellen er en model John von Neumann laget i 1945 og brukes fortsatt i dagens datamaskiner. 
+Det er en struktur for databehandling i datamaskinen. Von Neumann modellen inneholder 5 komponenter:
+Input:                  Får data inn i datamskinen gjennom f.eks. et tastatur, en disk, en kort leser osv. 
+Memory:                 Lagrer data og instrukser, inneholder et addresseregiser(MAR) og et dataregister(MDR)
+Processing Unit:        Prosseserer data som blir mottatt. Inneholder et midlertidig register(TMP) som midlertidig holder på data, og 
+                        en Arithmetic/Logical Unit(ALU) som tar seg av matematiske(+, -, /, *) og logiske(AND, OR, XOR) problemer
+Control Unit:           Holder styr på hele prosessen. Sørger for at instruksene skjer på riktig sted til riktig tid. Inneholder et  
+                        instruksregister(IR) som holder på den nåværende intruksjonen, og en instruksjonspeker(PC) som holder på 
+                        den neste instruksjonen.
+Output:                 Får data ut fra datamaskinen gjennom f.eks. en skjerm, en disk, en LED osv. 
+
+Komponentene i von Neumann modellen jobber i lag for å utføre databehandlingen, dette kaller vi instruksjonssyklusen som ser slik ut:
+1. Fetch: Henter neste instruksjon fra instruksjonspekeren og legger den i instruksjonsregisteret
+2. Decode: Finner ut hva som skal gjøre og hvor det skal utføres
+3. Evaluate Address: Finner addressen i minnet til instruks operanden
+4. Fetch Operands: Legger addressen vi nå har funnet inn i addresseregisteret, leser det inn i dataregisteret og gjør det tilgjengelig for
+                   for Processing Unit-en
+5. Execute: Utfører prossessen gitt av instruksen
+6. Store Result: Lagrer resultatet i den gitte destinasjonen i minnet og startet prosessen om igjen
+
+Femte utdrag:
+
+John von Neumann laget i 1945 en struktur for databehandling som i dag kjennes som von Neumann modellen. Modellen viste hvordan 
+en datamaskin skulle drive databehandling. Strukturen inneholdet 5 komponenter:
+Input:              Hvor data kommer inn i datamaskinen gjennom f.eks. et tastatur, en kort leser, en disk osv. 
+Memory:             Hvor data og instruksjoner blir lagret. Har et addresseregister(MAR) og et dataregister(MDR)
+Processing Unit:    Hvor dataen blir prossesert. Har et midlertidig register(TMP) som midlertidig holder på data, og en 
+                    Arithmetic/Logical Unit som tar seg av matematiske(+, -, bitshift) og logiske(AND, OR, XOR) problemer
+Control Unit:       Holder styr på hele prosessen. Har et instruksjonsregister(IR) som holder på den nåværende instruksjonen
+                    og en instruksjonspeker(PC) som peker til neste instruks
+Output:             Hvor data kommer ut fra datamaskinen gjennom f.eks. en skjerm, en disk, en LED osv.
+
+Komponentene i modellen jobber i lag for å drive prosessen, hvordan dette skjer kalles for instruksjonssyklusen og ser slik ut:
+1. Fetch: Henter neste instruksjon fra minnet og sender den til instruksjonsregisteret og inkrementerer instruksjonspekeren
+2. Decode: Tolker instruksjonen i instruksjonsregisteret og finnet ut hva som skal utføres og hvor det skal utføres
+3. Evaluate Address: Finner hvor minnet må akseseres, om nødvendig
+4. Fetch Operands: Sender adressen vi nå har funnet til adresseregisteret og leser det til dataregisteret så det er tilgjengelig 
+for processing uniten å finne operandene som instruksen skal gjøres på
+5. Execute: Utfører instruksjonene
+6. Store Result: Lagrer resultatet til den gitte destinasjonen i minnet og starter prosessen om igjen
+
+
+Sjette utdrag:
+
+John von Neumann laget i 1945 en struktur for behandling av data som i dag kjennes som von Neumann modellen. Modellen
+inneholder 5 komponenter:
+Input:              Hvor data kommer inn i datamaskinen gjennom f.eks. et tastatur, en kort leser, en disk osv. 
+Memory:             Der data og instruksjoner lagres. Har et adresseregister(MAR) og et dataregister(MDR)
+Processing Unit:    Hvor dataen prosesseres. Har et midlertidig register(TMP) og en Arithmetic/Logical Unit   
+                    som tar seg av de matematiske(+, -, bitshift) og logiske(AND, OR, XOR) problemer
+Control Unit:       Holder styr på hele prosessen. Har et instruksjonsregister(IR) som holder på den nåværende
+                    instruksjonen, og en instruksjonspeker(PC) som peker til neste intruksjon i minnet
+Output:             Hvor data kommer ut av datamaskinen gjennom f.eks. et skjerm, en disk, en LED osv.
+
+Komponentene jobber i lag i det vi kaller instruksjonssyklusen, og den ser slik ut:
+1. Fetch: Henter neste instruksjon i minnet og sender den til instruksjonsregisteret
+2. Decode: Henter ut hva som skal utføres og hvor det utføres
+3. Evaluate Address: Finner ut hvor i minnet som må akseseres, om nødvendig
+4. Fetch Operands: Sender adressen til adresseregisteret som leser den til dataregisteret i minnet. 
+                   Gjør det tilgjengelig for Processing Unit-en å hente ut hvilke operander som skal brukes
+5. Execute: Utfører instruksjonen
+6. Store Result: Lagrer resultatet til den gitte destinasjonen i minnet og starter prosessen om igjen
+
+
+
+Syvende utdrag:
+
+John von Neumann laget i 1945en struktur for hvordan behandling av data i en datamaskin skulle skjer. Denne strukturen 
+kjenner vi idag som von Neumann modellen. Den inneholder 5 forskjellige komponenter:
+Input:              Hvor data kommer inn i datamaskinen gjennom f.eks. et tastatur, en disk eller en kort leser osv. 
+Memory:             Det data og instruksjoner lagres. Har et adresseregister(MAR) og et dataregister(MDR)
+Processing Unit:    Hvor dataen blir prosessert. Har et midlertidig register(TMP) og en Arithmetic/Logical Unit som tar seg av
+                    matematiske(+, -, bitshift) og logiske(AND, OR, XOR) problemer
+Control Unit:       Holder styr på hele prosessen. Har et instruksjonsregister(IR) som holder på den nåværende instruksjonen
+                    og en inrtuksjonspeker(PC) som peker til neste instruksjon i minnet
+Output:             Hvor data kommer ut av datamaskinen gjennom f.eks. en skjerm, en disk, en LED osv.
+
+Komponenetene jobber i lag i det vi kalle instruksjonssyklusen, den ser slik ut:
+1. Fetch: Henter neste instruksjon fra minnet og legger det i instruksjonsregisteret
+2. Decode: Finner ut hva som skal gjøre og hvor det utføres
+3. Evaluate Address: Finner ut hvor i minnet vi må akseseres, om nødvendig
+4. Fetch Operands: Leser adressen vi har funnet til adresseregisteret hvor den videre leses til dataregisteret
+                   så den er tilgjengelig for Processing uniten til å hente ut
+5. Execute: Utfører prosessen
+6. Store Result: Lagrer resultatet til den gitte destinasjonen i minnet og starter prosessen om igjen
+
+
+Åttende utdrag:
+
+John von Neumann laget i 1945 en data struktur for hvordan en datamaskin kunne drive data behandling. Denne strukturen kjenner vi idag
+som von Neumann modellen. Modellen inneholder 5 komponenter:
+Input:              Hvor data kommer inn i datamaskinen gjennom f.eks. et tastatur, en kortleser, en disk osv.
+Memory:             Der data, instruksjoner og resultater blir lagret. Har et adresseregister(MAR) og et dataregister(MDR)
+Processing Unit:    Der data blir prosessert. Har et register(TMP) for midlertidig data til den nåværende instruksjonen og en Arithmetic/Logical
+                    Unit som tar seg av matematiske(+, -, bitshift) og logiske(AND, OR, XOR) problemer
+Control Unit:       Holder styr på hele prosessen. Har et instruksjonsregister(IR) som holder på den nåværende instruksjonen 
+                    og en instruksjonspeker(PC) som peker til neste instruksjon i minnet
+Output:             Hvor data kommer ut av datamaskinen gjennom f.eks. en skjerm, en disk, en LED osv. 
+
+Komponentene jobber i lag i det vi kaller instruksjonssyklusen, den ser slik ut:
+1. Fetch: Henter neste instruksjon fra minnet og leser den til instruksjonsregisteret
+2. Decode: Finner ut hva som skal gjøres og hvor det utføres
+3. Evaluate Address: Finner ut hvor i minnet vi må akseseres, om nødvendig
+4. Fetch Operands: Sender adressen til adresseregisteret og leser den til dataregisteret så det er tilgjengelig for
+                   processing uniten til å hente ut
+5. Execute: Utfører prosessen gitt fra instruksjonene
+6. Store Result: Lagrer dataen i den gitte destinasjonen i minnet og starter instruksjonssyklusen om igjen
+
+
+Niende utdrag:
+
+John von Neumann laget i 1945 en struktur for hvordan en datamaskin kunne drive behandling av data. Denne 
+strukturen kjenner vi idag som von Neumann modellen. Den inneholder 5 komponenter som jobber i lag i det 
+vi kaller instruksjonssyklusen:
+Input:
+Hvor data kommer inn i datamaskinen gjennom f.eks. et tastatur, en disk, en kortleser osv.
+
+Memory:
+Hvor instruksjonene og data blir lagret. Har et adresseregister(MAR) for å lagre adresser, og et dataregister
+for å lagre data.
+
+Processing Unit:
+Hvor dataen blir prosessert. Har et register(TMP) for midlertidig lagring av data, og en Arithmetic/Logical
+Unit som tar seg av de matematiske(+, -, bitshift) og logiske(AND, OR, XOR) problemene i instruksjonene
+
+Control Unit:
+Holder styr på det som skjer i PU-en. Har et instruksjonregister(IR) som holder på den nåværende instruksjonen
+og en instruksjonspeker(PC) som holder på den neste instruksjonen i minnet. 
+
+Output:
+Hvor data kommmer ut av datamaskinen gjennom f.eks. en skjerm, en disk, en LED osv. 
+
+Instruksjonssyklusen:
+1. Fetch: Henter neste instruksjon fra minnet og laster den opp til instruksjonsregisteret i CU-en
+2. Decode: Bryter ned instruksjonen og finner ut hva instruksjonen er og hvilken data som skal brukes
+3. Evaluate Address: Evaluerer om vi må akseseres i minnet for å utføre instruksjonen
+4. Fetch Operands: Laster adressen opp til adresseregisteret som videre leser den til dataregisteret
+                   så det er tilgjengelig for PU-en å hente ut
+5. Execute: CU-en aktiverer de nødvendige prosessene som skal gjøres for å utføre instruksjonen
+6. Store Result: Lagrer resultatet fra prosessen i den gitte destinasjonen i minnet og starter  
+                 prosessen om igjen

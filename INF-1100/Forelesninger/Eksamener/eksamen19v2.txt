@@ -1,0 +1,56 @@
+Eksamen 2019, øving for sterke menn
+
+Oppgave 2a)
+
+(1) ukjent(2,5) vil returnere verdien 32
+(2) ukjent(10,3) vil returnere verdien 1000
+
+Oppgave 2b)
+Funksjonen berenger tallet b som en potens av tallet a. a ganges med seg selv b antall ganger, bruker int x for at a ganges med 1 når potensen er 1. 
+
+Oppgave 3a)
+
+int strlengde(char *s){
+    // Antar at vi har funksjonen "strlen" fra string.h 
+    int i = 0;
+    char ch = s[i];
+
+    while(ch != '\0'){
+        ch = s[i];
+        i++;
+    }
+
+    return i;    
+}
+
+Oppgave 3b)
+
+int strsiste(char *s){
+    int siste = 0;
+
+    while(siste <= strlengde(s)){
+        siste++;
+        if(s[i] == '\0'){
+            return i-1;
+        }
+    }
+    return -1;
+}
+
+Oppgave 3c)
+
+void strrevers(char *s){
+    // Bruker strlengde til å finne lengde på arrayet
+    int slutt = strlengde(s) - 1;
+    int start = 0;
+    char tmp;
+
+    while(start < slutt){
+        tmp = s[start];
+        s[start] = s[slutt];
+        s[slutt] = tmp;
+        slutt--;
+        start++;
+    }
+}
+
